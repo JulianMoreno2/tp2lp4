@@ -10,6 +10,7 @@ import java.util.ArrayList;
 
 /**
  * Created by Rain on 23/03/2016.
+ * Clase para la base de datos sqlite
  */
 public class Helper extends SQLiteAssetHelper{
 

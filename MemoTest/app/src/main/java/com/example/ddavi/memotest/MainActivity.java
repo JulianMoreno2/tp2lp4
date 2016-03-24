@@ -10,6 +10,7 @@ import android.widget.GridView;
 import android.widget.AdapterView;
 import android.widget.AdapterView.OnItemClickListener;
 import android.os.SystemClock;
+import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -23,6 +24,10 @@ public class MainActivity extends AppCompatActivity {
         final Chronometer chrono = (Chronometer) findViewById(R.id.cronometro);
         chrono.setBase(SystemClock.elapsedRealtime());
         chrono.start();
+        //Pone el nombre del jugador, ya ingresado en el textView de activity_menu
+        final TextView player = (TextView) findViewById(R.id.playerView);
+        player.setText(MemoTest.getInstance().getPlayerName());
+
         gridview.setAdapter(new AdaptadorDeMemoTest(this));
 
         gridview.setOnItemClickListener(new OnItemClickListener() {

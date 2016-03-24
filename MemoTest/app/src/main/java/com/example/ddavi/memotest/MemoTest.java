@@ -2,6 +2,8 @@ package com.example.ddavi.memotest;
 
 public class MemoTest {
     private static MemoTest instance;
+    private String playerName;
+
     private MemoTest() {}
 
     public static MemoTest getInstance(){
@@ -116,5 +118,13 @@ public class MemoTest {
             }
         }
         return null;
+    }
+
+    public void setPlayerName(String playerName) {
+        this.playerName = playerName;
+    }
+
+    public String getPlayerName() {
+        return playerName;
     }
 }
