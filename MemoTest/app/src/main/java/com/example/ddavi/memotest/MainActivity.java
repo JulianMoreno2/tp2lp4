@@ -1,5 +1,8 @@
 package com.example.ddavi.memotest;
 
+import android.app.AlertDialog;
+import android.content.DialogInterface;
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
@@ -24,9 +27,12 @@ public class MainActivity extends AppCompatActivity {
         final Chronometer chrono = (Chronometer) findViewById(R.id.cronometro);
         chrono.setBase(SystemClock.elapsedRealtime());
         chrono.start();
+
         //Pone el nombre del jugador, ya ingresado en el textView de activity_menu
         final TextView player = (TextView) findViewById(R.id.playerView);
         player.setText(MemoTest.getInstance().getPlayerName());
+
+
 
         gridview.setAdapter(new AdaptadorDeMemoTest(this));
 
@@ -53,9 +59,40 @@ public class MainActivity extends AppCompatActivity {
                 Image item = (Image)parent.getAdapter().getItem(position);
                 ((AdaptadorDeMemoTest)parent.getAdapter()).updateImages(item);
 
-                if (MemoTest.getInstance().juegoTerminado())
+                if (MemoTest.getInstance().juegoTerminado()) {
                     //Aca tambien deberia mandarme a la pantalla de fin de juego
                     chrono.stop();
+
+                    //MemoTest.getInstance().setRecordPlayer(Integer.parseInt((String) chrono.getText()));
+
+                    AlertDialog.Builder builder = new AlertDialog.Builder(MainActivity.this);
+                    builder.setMessage("Tu puntuacion es:" + MemoTest.getInstance().getRecordPlayer());
+
+                    //Aca tiene que guardar los datos en la db
+
+                    builder.setCancelable(true);
+
+                    builder.setPositiveButton(
+                            "Record",
+                            new DialogInterface.OnClickListener() {
+                                public void onClick(DialogInterface dialog, int id) {
+                                    dialog.cancel();
+                                    Intent intent = new Intent(MainActivity.this, RecordActivity.class);
+                                    startActivity(intent);
+                                }
+                            });
+
+                    builder.setNegativeButton(
+                            "Try again",
+                            new DialogInterface.OnClickListener() {
+                                public void onClick(DialogInterface dialog, int id) {
+                                    dialog.cancel();
+                                }
+                            });
+
+                    AlertDialog alert = builder.create();
+                    alert.show();
+                }
 
                 gridview.invalidateViews();
             }
