@@ -1,0 +1,48 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical">
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_gravity="center_horizontal"
+        android:background="@drawable/memotest">
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Start"
+            android:id="@+id/bStart"
+            android:layout_centerVertical="true"
+            android:layout_centerHorizontal="true"
+            android:onClick="onButtonClick"
+            android:background="@drawable/buttonstart"/>
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Exit"
+            android:id="@+id/bExit"
+            android:layout_alignParentBottom="true"
+            android:layout_alignLeft="@+id/bStart"
+            android:layout_alignStart="@+id/bStart"
+            android:layout_marginBottom="53dp"
+            android:onClick="onButtonClick"
+            android:background="@drawable/buttonstart"/>
+
+        <EditText
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:inputType="textPersonName"
+            android:text="Player"
+            android:ems="10"
+            android:id="@+id/textName"
+            android:layout_below="@+id/bStart"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="51dp" />
+    </RelativeLayout>
+
+</LinearLayout>
