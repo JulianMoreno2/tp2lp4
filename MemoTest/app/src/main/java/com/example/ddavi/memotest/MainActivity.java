@@ -87,6 +87,8 @@ public class MainActivity extends AppCompatActivity {
                             new DialogInterface.OnClickListener() {
                                 public void onClick(DialogInterface dialog, int id) {
                                     dialog.cancel();
+                                    Intent intent = new Intent(MainActivity.this, MenuActivity.class);
+                                    startActivity(intent);
                                 }
                             });
 
