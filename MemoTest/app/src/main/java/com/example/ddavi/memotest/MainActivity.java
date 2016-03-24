@@ -62,8 +62,9 @@ public class MainActivity extends AppCompatActivity {
                 if (MemoTest.getInstance().juegoTerminado()) {
                     //Aca tambien deberia mandarme a la pantalla de fin de juego
                     chrono.stop();
+                    //Funciona pero hay que calibrarlo para que no sea un numero grande
+                    MemoTest.getInstance().setRecordPlayer((SystemClock.elapsedRealtime() - chrono.getBase()/1000));
 
-                    //MemoTest.getInstance().setRecordPlayer(Integer.parseInt((String) chrono.getText()));
 
                     AlertDialog.Builder builder = new AlertDialog.Builder(MainActivity.this);
                     builder.setMessage("Tu puntuacion es:" + MemoTest.getInstance().getRecordPlayer());

@@ -3,7 +3,7 @@ package com.example.ddavi.memotest;
 public class MemoTest {
     private static MemoTest instance;
     private String playerName;
-    private int recordPlayer;
+    private long recordPlayer;
 
     private MemoTest() {}
 
@@ -129,11 +129,11 @@ public class MemoTest {
         return playerName;
     }
 
-    public int getRecordPlayer() {
+    public long getRecordPlayer() {
         return recordPlayer;
     }
 
-    public void setRecordPlayer(int recordPlayer) {
+    public void setRecordPlayer(long recordPlayer) {
         this.recordPlayer = recordPlayer;
     }
 }
