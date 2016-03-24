@@ -23,7 +23,6 @@ public class MenuActivity extends Activity {
 
     public void onButtonClick(View view) {
 
-
         if(view.getId() == R.id.bStart){
             //obtiene el texto del editText y lo guarda en el atributo del memotest
             memoTest.getInstance().setPlayerName( ((EditText)findViewById(R.id.editTextName)).getText().toString());
@@ -32,7 +31,8 @@ public class MenuActivity extends Activity {
         }
 
         if(view.getId() == R.id.bExit){
-            //Buscar metodo para cerrar aplicacion
+            finish();
+            System.exit(0);
         }
     }
 
