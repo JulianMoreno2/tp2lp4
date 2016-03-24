@@ -19,19 +19,20 @@
             android:layout_centerVertical="true"
             android:layout_centerHorizontal="true"
             android:onClick="onButtonClick"
-            android:background="@drawable/buttonstart"/>
+            android:background="@drawable/buttonstart"
+            android:width="120dp"
+            android:height="100dp"/>
 
         <Button
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Exit"
             android:id="@+id/bExit"
-            android:layout_alignParentBottom="true"
-            android:layout_alignLeft="@+id/bStart"
-            android:layout_alignStart="@+id/bStart"
-            android:layout_marginBottom="53dp"
             android:onClick="onButtonClick"
-            android:background="@drawable/buttonstart"/>
+            android:background="@drawable/buttonstart"
+            android:layout_below="@+id/editTextName"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="45dp" />
 
         <EditText
             android:layout_width="wrap_content"
