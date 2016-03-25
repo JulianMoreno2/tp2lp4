@@ -1,18 +1,13 @@
 package com.example.ddavi.memotest;
 
-import android.app.AlertDialog;
-import android.content.DialogInterface;
-import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.widget.Chronometer;
 import android.widget.GridView;
 import android.widget.AdapterView;
 import android.widget.AdapterView.OnItemClickListener;
-import android.os.SystemClock;
 import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity {
@@ -22,19 +17,17 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        final GridView gridview = (GridView) findViewById(R.id.grid);// crear el
-        // gridview a partir del elemento del xml gridview
-        final Chronometer chrono = (Chronometer) findViewById(R.id.cronometro);
-        chrono.setBase(SystemClock.elapsedRealtime());
-        chrono.start();
+        final GridView gridview = (GridView) findViewById(R.id.grid);
+        AdaptadorDeMemoTest adaptador = new AdaptadorDeMemoTest(this);
+        int milisegundos = 120000;
+        //final TextView chrono = (TextView) findViewById(R.id.cronometro);
+        MyCountDownTimer counter =new MyCountDownTimer(adaptador,milisegundos, 1000);
+        counter.start();
 
         //Pone el nombre del jugador, ya ingresado en el textView de activity_menu
         final TextView player = (TextView) findViewById(R.id.playerView);
         player.setText(MemoTest.getInstance().getPlayerName());
-
-
-
-        gridview.setAdapter(new AdaptadorDeMemoTest(this));
+        gridview.setAdapter(adaptador);
 
         gridview.setOnItemClickListener(new OnItemClickListener() {
             // dentro de este listener difinimos la función que se ejecuta al
@@ -51,52 +44,12 @@ public class MainActivity extends AppCompatActivity {
 
             public void onItemClick(AdapterView<?> parent, View v,
                                     int position, long id) {
-                // Toast para mostrar un mensaje. Escribe el nombre de tu clase
-                // si no la llamaste MainActivity.
-                // Al hacer click, esta mensaje muestra la posición
-                /*Toast.makeText(MainActivity.this, "" + position, Toast.LENGTH_SHORT)
-                        .show();*/
+
                 Image item = (Image)parent.getAdapter().getItem(position);
                 ((AdaptadorDeMemoTest)parent.getAdapter()).updateImages(item);
 
-                if (MemoTest.getInstance().juegoTerminado()) {
-                    //Aca tambien deberia mandarme a la pantalla de fin de juego
-                    chrono.stop();
-                    ((AdaptadorDeMemoTest)parent.getAdapter()).unselectedImages();
-                    //Funciona pero hay que calibrarlo para que no sea un numero grande
-                    MemoTest.getInstance().setRecordPlayer((SystemClock.elapsedRealtime() - chrono.getBase()/1000));
-
-
-                    AlertDialog.Builder builder = new AlertDialog.Builder(MainActivity.this);
-                    builder.setMessage("Tu puntuacion es:" + MemoTest.getInstance().getRecordPlayer());
-
-                    //Aca tiene que guardar los datos en la db
-
-                    builder.setCancelable(true);
-
-                    builder.setPositiveButton(
-                            "Record",
-                            new DialogInterface.OnClickListener() {
-                                public void onClick(DialogInterface dialog, int id) {
-                                    dialog.cancel();
-                                    Intent intent = new Intent(MainActivity.this, RecordActivity.class);
-                                    startActivity(intent);
-                                }
-                            });
-
-                    builder.setNegativeButton(
-                            "Try again",
-                            new DialogInterface.OnClickListener() {
-                                public void onClick(DialogInterface dialog, int id) {
-                                    dialog.cancel();
-                                    Intent intent = new Intent(MainActivity.this, MenuActivity.class);
-                                    startActivity(intent);
-                                }
-                            });
-
-                    AlertDialog alert = builder.create();
-                    alert.show();
-                }
+                if (MemoTest.getInstance().isGameOver())
+                    ((AdaptadorDeMemoTest) parent.getAdapter()).gameOver();
 
                 gridview.invalidateViews();
             }

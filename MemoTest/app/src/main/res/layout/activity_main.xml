@@ -31,8 +31,8 @@
             android:text="Tiempo:"
             android:layout_margin="5dp" />
 
-        <Chronometer android:id="@+id/cronometro"
-            android:layout_width="40dp"
+        <TextView android:id="@+id/cronometro"
+            android:layout_width="100dp"
             android:textColor="@android:color/white"
             android:layout_height="30dp"
             android:maxLines="1"

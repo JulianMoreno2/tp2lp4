@@ -71,7 +71,7 @@ public class MemoTest {
      * Verifica si todas las imagenes estan seleccionadas
      * @return
      */
-    public boolean juegoTerminado(){
+    public boolean isGameOver(){
 
         boolean gameState = true;
         int i = 0;
