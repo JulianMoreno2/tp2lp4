@@ -5,34 +5,13 @@
     android:orientation="vertical">
 
 
-    <RelativeLayout
-        android:layout_width="match_parent"
+    <LinearLayout
+        android:layout_width="fill_parent"
         android:layout_height="match_parent"
-        android:layout_gravity="center_horizontal"
+        android:orientation="vertical"
+        android:layout_gravity="center_vertical"
+        android:gravity="center"
         android:background="@drawable/memotest">
-
-        <Button
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Start"
-            android:id="@+id/bStart"
-            android:layout_centerVertical="true"
-            android:layout_centerHorizontal="true"
-            android:onClick="onButtonClick"
-            android:background="@drawable/buttonstart"
-            android:width="120dp"
-            android:height="100dp"/>
-
-        <Button
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Exit"
-            android:id="@+id/bExit"
-            android:onClick="onButtonClick"
-            android:background="@drawable/buttonstart"
-            android:layout_below="@+id/editTextName"
-            android:layout_centerHorizontal="true"
-            android:layout_marginTop="45dp" />
 
         <EditText
             android:layout_width="wrap_content"
@@ -41,9 +20,39 @@
             android:text="Player"
             android:ems="10"
             android:id="@+id/editTextName"
-            android:layout_below="@+id/bStart"
-            android:layout_centerHorizontal="true"
-            android:layout_marginTop="51dp" />
-    </RelativeLayout>
+            android:layout_marginBottom="20dp"
+            android:layout_above="@+id/bStart"
+            android:layout_alignRight="@+id/bStart"
+            android:layout_alignEnd="@+id/bStart"
+            android:layout_marginTop="200dp" />
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Start"
+            android:id="@+id/bStart"
+            android:onClick="onButtonClick"
+            android:background="@drawable/buttonstart"
+            android:width="200dp"
+            android:height="50dp"
+            android:layout_marginBottom="20dp"
+            android:layout_above="@+id/bExit"
+            android:layout_centerHorizontal="true" />
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Exit"
+            android:id="@+id/bExit"
+            android:onClick="onButtonClick"
+            android:background="@drawable/buttonstart"
+            android:height="50dp"
+            android:width="200dp"
+            android:layout_alignParentBottom="true"
+            android:layout_alignLeft="@+id/bStart"
+            android:layout_alignStart="@+id/bStart"
+            android:layout_marginBottom="69dp" />
+
+    </LinearLayout>
 
 </LinearLayout>

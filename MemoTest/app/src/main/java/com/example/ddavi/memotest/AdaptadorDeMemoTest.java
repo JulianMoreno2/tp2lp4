@@ -55,6 +55,13 @@ public class AdaptadorDeMemoTest extends BaseAdapter {
         return view;
     }
 
+    public void unselectedImages(){
+
+        for (int i=0; i<MemoTest.getInstance().IMAGES.length;i++){
+            MemoTest.getInstance().IMAGES[i].setSelected(false);
+        }
+    }
+
     public void updateImages(Image item){
 
         if (MemoTest.getInstance().getCountSelectedImages() == 2)

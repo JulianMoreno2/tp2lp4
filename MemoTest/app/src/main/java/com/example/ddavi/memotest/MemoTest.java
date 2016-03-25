@@ -104,6 +104,7 @@ public class MemoTest {
             new Image("Porsche 911 GTS", R.drawable.porsche_911_gts),
             new Image("Jaguar XE", R.drawable.jaguar_xe),
             new Image("Ford Mondeo", R.drawable.ford_mondeo),
+
     };
 
     /**
