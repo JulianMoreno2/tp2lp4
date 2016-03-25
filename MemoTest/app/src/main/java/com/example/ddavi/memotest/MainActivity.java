@@ -21,7 +21,7 @@ public class MainActivity extends AppCompatActivity {
         AdaptadorDeMemoTest adaptador = new AdaptadorDeMemoTest(this);
         int milisegundos = 120000;
         //final TextView chrono = (TextView) findViewById(R.id.cronometro);
-        final MyCountDownTimer counter =new MyCountDownTimer(adaptador,milisegundos, 1000);
+        final MyCountDownTimer counter = new MyCountDownTimer(adaptador,milisegundos, 1000);
         counter.start();
 
         //Pone el nombre del jugador, ya ingresado en el textView de activity_menu

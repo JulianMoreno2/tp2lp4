@@ -32,6 +32,7 @@ public class MenuActivity extends Activity {
         }
 
         if(view.getId() == R.id.bRecord){
+            finish();
             Intent intent = new Intent(MenuActivity.this, RecordActivity.class);
             startActivity(intent);
         }
