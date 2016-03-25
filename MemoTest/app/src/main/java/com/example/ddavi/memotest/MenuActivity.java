@@ -31,10 +31,17 @@ public class MenuActivity extends Activity {
             startActivity(intent);
         }
 
+        if(view.getId() == R.id.bRecord){
+            Intent intent = new Intent(MenuActivity.this, RecordActivity.class);
+            startActivity(intent);
+        }
+
         if(view.getId() == R.id.bExit){
             finish();
             System.exit(0);
         }
+
+
     }
 
 }

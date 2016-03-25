@@ -4,6 +4,7 @@ import android.app.AlertDialog;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.os.SystemClock;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -18,6 +19,7 @@ import com.bumptech.glide.Glide;
 
 public class AdaptadorDeMemoTest extends BaseAdapter {
     private Context context;
+    private DataBaseManager manager;
 
     public AdaptadorDeMemoTest(Context context) {
         this.context = context;
@@ -79,17 +81,19 @@ public class AdaptadorDeMemoTest extends BaseAdapter {
         MemoTest.getInstance().compareSelectedImages();
     }
 
-    public void gameOver(){
+    public void gameOver(String record){
 
         //Aca tambien deberia mandarme a la pantalla de fin de juego
         this.unselectedImages();
         //Funciona pero hay que calibrarlo para que no sea un numero grande
-        //MemoTest.getInstance().setRecordPlayer((SystemClock.elapsedRealtime() - chrono.getBase()/1000));
+        MemoTest.getInstance().setRecordPlayer(record);
 
         AlertDialog.Builder builder = new AlertDialog.Builder(context);
-        builder.setMessage("Tu puntuacion es:" + MemoTest.getInstance().getRecordPlayer());
+        builder.setMessage("Tu tiempo fue:" + MemoTest.getInstance().getRecordPlayer());
 
-        //Aca tiene que guardar los datos en la db
+        manager = new DataBaseManager(context);
+        //Agrega el player y su tiempo a la base de datos
+        manager.insert(MemoTest.getInstance().getPlayerName(), String.valueOf(MemoTest.getInstance().getRecordPlayer()));
 
         builder.setCancelable(true);
 

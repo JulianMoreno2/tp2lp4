@@ -21,13 +21,14 @@ public class MainActivity extends AppCompatActivity {
         AdaptadorDeMemoTest adaptador = new AdaptadorDeMemoTest(this);
         int milisegundos = 120000;
         //final TextView chrono = (TextView) findViewById(R.id.cronometro);
-        MyCountDownTimer counter =new MyCountDownTimer(adaptador,milisegundos, 1000);
+        final MyCountDownTimer counter =new MyCountDownTimer(adaptador,milisegundos, 1000);
         counter.start();
 
         //Pone el nombre del jugador, ya ingresado en el textView de activity_menu
         final TextView player = (TextView) findViewById(R.id.playerView);
         player.setText(MemoTest.getInstance().getPlayerName());
         gridview.setAdapter(adaptador);
+
 
         gridview.setOnItemClickListener(new OnItemClickListener() {
             // dentro de este listener difinimos la función que se ejecuta al
@@ -49,7 +50,7 @@ public class MainActivity extends AppCompatActivity {
                 ((AdaptadorDeMemoTest)parent.getAdapter()).updateImages(item);
 
                 if (MemoTest.getInstance().isGameOver())
-                    ((AdaptadorDeMemoTest) parent.getAdapter()).gameOver();
+                    ((AdaptadorDeMemoTest) parent.getAdapter()).gameOver(counter.getTimeStop());
 
                 gridview.invalidateViews();
             }

@@ -15,14 +15,11 @@ import java.util.ArrayList;
  */
 public class DbHelper extends SQLiteOpenHelper {
 
-
-    private static final String DATABASE_NAME = "puntuacion.sqlite";
+    private static final String DATABASE_NAME = "record.sqlite";
     private static final int DATABASE_SCHEME_VERSION = 1;
-    private SQLiteDatabase db;
 
     public DbHelper(Context context){
         super(context, DATABASE_NAME, null, DATABASE_SCHEME_VERSION);
-        db = getWritableDatabase();
     }
 
     @Override

@@ -19,7 +19,7 @@ public class MyCountDownTimer extends CountDownTimer {
     public void onFinish() {
         this.textCounter.setText("Time Out");
         this.textCounter.setTextColor(Color.RED);
-        this.adaptador.gameOver();
+        this.adaptador.gameOver((String) textCounter.getText());
     }
 
     @Override
@@ -37,5 +37,9 @@ public class MyCountDownTimer extends CountDownTimer {
                 + ":"+ String.valueOf(seconds);
 
         return currentDate;
+    }
+
+    public String getTimeStop(){
+        return (String)textCounter.getText();
     }
 }
