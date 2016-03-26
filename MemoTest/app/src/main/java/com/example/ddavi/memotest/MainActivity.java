@@ -20,8 +20,14 @@ public class MainActivity extends AppCompatActivity {
 
         final GridView gridview = (GridView) findViewById(R.id.grid);
         AdaptadorDeMemoTest adaptador = new AdaptadorDeMemoTest(this);
+<<<<<<< HEAD
         int milisegundos = 20000;
         final MyCountDownTimer counter =new MyCountDownTimer(adaptador,milisegundos, 1000);
+=======
+        int milisegundos = 120000;
+        //final TextView chrono = (TextView) findViewById(R.id.cronometro);
+        final MyCountDownTimer counter = new MyCountDownTimer(adaptador,milisegundos, 1000);
+>>>>>>> 12e8b47c38f96164ed241dd67a8917689d440f82
         counter.start();
 
         //Pone el nombre del jugador, ya ingresado en el textView de activity_menu
