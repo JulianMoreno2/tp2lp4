@@ -1,5 +1,6 @@
 package com.example.ddavi.memotest;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
@@ -19,8 +20,7 @@ public class MainActivity extends AppCompatActivity {
 
         final GridView gridview = (GridView) findViewById(R.id.grid);
         AdaptadorDeMemoTest adaptador = new AdaptadorDeMemoTest(this);
-        int milisegundos = 120000;
-        //final TextView chrono = (TextView) findViewById(R.id.cronometro);
+        int milisegundos = 20000;
         final MyCountDownTimer counter =new MyCountDownTimer(adaptador,milisegundos, 1000);
         counter.start();
 
@@ -49,9 +49,10 @@ public class MainActivity extends AppCompatActivity {
                 Image item = (Image)parent.getAdapter().getItem(position);
                 ((AdaptadorDeMemoTest)parent.getAdapter()).updateImages(item);
 
-                if (MemoTest.getInstance().isGameOver())
+                if (MemoTest.getInstance().isGameOver()) {
                     ((AdaptadorDeMemoTest) parent.getAdapter()).gameOver(counter.getTimeStop());
-
+                    counter.cancel();
+                }
                 gridview.invalidateViews();
             }
         });

@@ -4,7 +4,6 @@ import android.app.AlertDialog;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
-import android.os.SystemClock;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -31,12 +30,12 @@ public class AdaptadorDeMemoTest extends BaseAdapter {
 
     @Override
     public int getCount() {
-        return MemoTest.getInstance().IMAGES.length;
+        return MemoTest.getInstance().getImages().length;
     }
 
     @Override
     public Image getItem(int position) {
-        return MemoTest.getInstance().IMAGES[position];
+        return MemoTest.getInstance().getImages()[position];
     }
 
     @Override
@@ -66,9 +65,9 @@ public class AdaptadorDeMemoTest extends BaseAdapter {
 
     public void unselectedImages(){
 
-        for (int i=0; i<MemoTest.getInstance().IMAGES.length;i++){
-            MemoTest.getInstance().IMAGES[i].setSelected(false);
-            MemoTest.getInstance().IMAGES[i].setFinded(false);
+        for (int i=0; i<MemoTest.getInstance().getImages().length;i++){
+            MemoTest.getInstance().getImages()[i].setSelected(false);
+            MemoTest.getInstance().getImages()[i].setFinded(false);
         }
     }
 
@@ -95,6 +94,10 @@ public class AdaptadorDeMemoTest extends BaseAdapter {
         //Agrega el player y su tiempo a la base de datos
         manager.insert(MemoTest.getInstance().getPlayerName(), String.valueOf(MemoTest.getInstance().getRecordPlayer()));
 
+        Intent intent = new Intent(context, RecordActivity.class);
+        context.startActivity(intent);
+
+        /*
         builder.setCancelable(true);
 
         builder.setPositiveButton(
@@ -118,6 +121,6 @@ public class AdaptadorDeMemoTest extends BaseAdapter {
                 });
 
         AlertDialog alert = builder.create();
-        alert.show();
+        alert.show();*/
     }
 }
