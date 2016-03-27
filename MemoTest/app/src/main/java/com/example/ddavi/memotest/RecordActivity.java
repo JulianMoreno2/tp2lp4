@@ -31,6 +31,7 @@ public class RecordActivity extends Activity {
         //text1 y text2 son del layout two line list item
         int[] to = new int[]{R.id.player, R.id.record};
 
+
         cursor = manager.loadCursorRecords();
 
         //el cero es una bandera por defecto para que el simpleCursorAdapter no este deprecated
