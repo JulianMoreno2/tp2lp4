@@ -55,7 +55,7 @@ public class DataBaseManager {
         String[] columns = new String[]{CN_ID,CN_NAME,CN_RECORD};
         //query (String table, String[] columns, String selection,
         // String selectionArgs, String groupBy, String having, String orderBy(
-        return db.query(TABLE_NAME, columns, null,null,null,null,CN_RECORD+" ASC");
+        return db.query(TABLE_NAME, columns,null,null,null,null,CN_RECORD+" ASC LIMIT 5");
     }
 
 }
