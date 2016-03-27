@@ -29,7 +29,7 @@ public class MenuActivity extends Activity {
 
     public void onRecordClick(View view){
         finish();
-        Intent intent = new Intent(MenuActivity.this, RecordActivity.class);
+        Intent intent = new Intent(MenuActivity.this, HistoryActivity.class);
         startActivity(intent);
     }
 
