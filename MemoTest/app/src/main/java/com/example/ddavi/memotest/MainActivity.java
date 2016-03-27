@@ -21,13 +21,15 @@ public class MainActivity extends AppCompatActivity {
         final GridView gridview = (GridView) findViewById(R.id.grid);
         AdaptadorDeMemoTest adaptador = new AdaptadorDeMemoTest(this);
 
-        int milisegundos = 20000;
-        final MyCountDownTimer counter =new MyCountDownTimer(adaptador,milisegundos, 1000);
+        final MyCountDownTimer counter =new MyCountDownTimer(adaptador,AdaptadorDeMemoTest.timer, 1000);
         counter.start();
+
+        int numColumns = (int)Math.sqrt((double)MemoTest.getInstance().getImages().length);
+        gridview.setNumColumns(numColumns);
 
         //Pone el nombre del jugador, ya ingresado en el textView de activity_menu
         final TextView player = (TextView) findViewById(R.id.playerView);
-        player.setText(MemoTest.getInstance().getPlayerName());
+        player.setText(MemoTest.getInstance().getPlayer().getNombre());
         gridview.setAdapter(adaptador);
 
 
@@ -60,11 +62,18 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
+
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
         getMenuInflater().inflate(R.menu.menu_main, menu);
         return true;
+    }
+
+    @Override
+    public void onBackPressed() {
+        //Deshabilito boton que me permite ir hacia atrás
+        //redifiniendo el método y que no haga nada
     }
 
     @Override

@@ -17,54 +17,107 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:inputType="textPersonName"
-            android:text="Player"
+            android:text="Jugador"
             android:ems="10"
             android:id="@+id/editTextName"
-            android:layout_marginBottom="20dp"
+            android:layout_marginTop="100dp"
+            android:layout_marginBottom="70dp"
             android:layout_above="@+id/bStart"
             android:layout_alignRight="@+id/bStart"
             android:layout_alignEnd="@+id/bStart"
-            android:layout_marginTop="200dp" />
+            />
 
-        <Button
+        <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Start"
-            android:id="@+id/bStart"
-            android:onClick="onButtonClick"
-            android:background="@drawable/buttonstart"
-            android:width="200dp"
-            android:height="50dp"
-            android:layout_marginBottom="20dp"
-            android:layout_above="@+id/bMenu"
-            android:layout_centerHorizontal="true" />
+            android:orientation="horizontal"
+            android:layout_gravity="center_horizontal"
+            >
 
-        <Button
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Record"
-            android:id="@+id/bRecord"
-            android:onClick="onButtonClick"
-            android:background="@drawable/buttonstart"
-            android:width="200dp"
-            android:height="50dp"
-            android:layout_marginBottom="20dp"
-            android:layout_above="@+id/bExit"
-            android:layout_centerHorizontal="true" />
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_marginRight="20dp">
 
-        <Button
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Exit"
-            android:id="@+id/bExit"
-            android:onClick="onButtonClick"
-            android:background="@drawable/buttonstart"
-            android:height="50dp"
-            android:width="200dp"
-            android:layout_alignParentBottom="true"
-            android:layout_alignLeft="@+id/bStart"
-            android:layout_alignStart="@+id/bStart"
-            android:layout_marginBottom="69dp" />
+                <Button
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Principiante"
+                    android:id="@+id/b_beginner"
+                    android:onClick="onButtonClick"
+                    android:background="@drawable/buttonstart"
+                    android:width="150dp"
+                    android:height="40dp"
+                    android:layout_marginBottom="20dp"
+                    android:layout_above="@+id/bMenu"
+                    android:layout_centerHorizontal="true"
+                    />
+
+                <Button
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Normal"
+                    android:id="@+id/b_normal"
+                    android:onClick="onButtonClick"
+                    android:background="@drawable/buttonstart"
+                    android:width="150dp"
+                    android:height="40dp"
+                    android:layout_marginBottom="20dp"
+                    android:layout_above="@+id/bMenu"
+                    android:layout_centerHorizontal="true" />
+
+                <Button
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Experto"
+                    android:id="@+id/b_expert"
+                    android:onClick="onButtonClick"
+                    android:background="@drawable/buttonstart"
+                    android:width="150dp"
+                    android:height="40dp"
+                    android:layout_marginBottom="20dp"
+                    android:layout_above="@+id/bMenu"
+                    android:layout_centerHorizontal="true" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_marginTop="30dp">
+
+                <Button
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Record"
+                    android:id="@+id/bRecord"
+                    android:onClick="onRecordClick"
+                    android:background="@drawable/buttonstart"
+                    android:width="150dp"
+                    android:height="40dp"
+                    android:layout_marginBottom="20dp"
+                    android:layout_above="@+id/bExit"
+                    android:layout_centerHorizontal="true" />
+
+                <Button
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Exit"
+                    android:id="@+id/bExit"
+                    android:onClick="onExitClick"
+                    android:background="@drawable/buttonstart"
+                    android:height="40dp"
+                    android:width="150dp"
+                    android:layout_alignParentBottom="true"
+                    android:layout_alignLeft="@+id/bStart"
+                    android:layout_alignStart="@+id/bStart"
+                    android:layout_marginBottom="70dp" />
+
+            </LinearLayout>
+
+        </LinearLayout>
 
     </LinearLayout>
 
