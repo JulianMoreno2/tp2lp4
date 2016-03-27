@@ -76,9 +76,6 @@ public class AdaptadorDeMemoTest extends BaseAdapter {
 
         MemoTest.getInstance().getPlayer().setPuntuacion(record);
 
-        AlertDialog.Builder builder = new AlertDialog.Builder(context);
-        builder.setMessage("Tu tiempo fue:" + MemoTest.getInstance().getPlayer().getPuntuacion());
-
         manager = new DataBaseManager(context);
         //Agrega el player y su tiempo a la base de datos
         manager.insert(

@@ -4,15 +4,20 @@ import android.graphics.Color;
 import android.os.CountDownTimer;
 import android.widget.TextView;
 
+import java.util.Timer;
+
 public class MyCountDownTimer extends CountDownTimer {
 
     private TextView textCounter;
     private AdaptadorDeMemoTest adaptador;
+    private long timeToFinish;
+    private long timeStarted;
 
     public MyCountDownTimer(AdaptadorDeMemoTest adaptador, long startTime, long interval) {
         super(startTime, interval);
         this.textCounter = (TextView)((MainActivity)adaptador.getContext()).findViewById(R.id.cronometro);
         this.adaptador = adaptador;
+        this.timeStarted = startTime;
     }
 
     @Override
@@ -24,6 +29,7 @@ public class MyCountDownTimer extends CountDownTimer {
 
     @Override
     public void onTick(long millisUntilFinished) {
+        this.timeToFinish = millisUntilFinished;
         textCounter.setText(this.getTime(millisUntilFinished));
     }
 
@@ -40,6 +46,6 @@ public class MyCountDownTimer extends CountDownTimer {
     }
 
     public String getTimeStop(){
-        return (String)textCounter.getText();
+        return this.getTime(timeStarted - timeToFinish);
     }
 }

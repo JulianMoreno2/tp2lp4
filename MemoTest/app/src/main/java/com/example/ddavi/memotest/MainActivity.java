@@ -21,7 +21,7 @@ public class MainActivity extends AppCompatActivity {
         final GridView gridview = (GridView) findViewById(R.id.grid);
         AdaptadorDeMemoTest adaptador = new AdaptadorDeMemoTest(this);
 
-        final MyCountDownTimer counter =new MyCountDownTimer(adaptador,AdaptadorDeMemoTest.timer, 1000);
+        final MyCountDownTimer counter = new MyCountDownTimer(adaptador,AdaptadorDeMemoTest.timer, 1000);
         counter.start();
 
         int numColumns = (int)Math.sqrt((double)MemoTest.getInstance().getImages().length);

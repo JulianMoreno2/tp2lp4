@@ -57,7 +57,6 @@ public class Player {
         }else if (nivel == NivelUsuario.Normal){
             time = 120000;
         }
-
         return time;
     }
 
