@@ -60,6 +60,11 @@ public class MenuActivity extends Activity {
             AdaptadorDeMemoTest.timer = timerExpert;
         }
 
+        if(view.getId() == R.id.bExit){
+            finish();
+            System.exit(0);
+        }
+
         juego.getPlayer().setNombre(((EditText) findViewById(R.id.editTextName)).getText().toString());
         Intent intent = new Intent(MenuActivity.this, MainActivity.class);
         startActivity(intent);

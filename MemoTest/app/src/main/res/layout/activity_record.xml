@@ -6,11 +6,57 @@
     android:orientation="vertical"
     android:background="@drawable/records"
     >
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="1">
+        <TextView
+            android:id="@+id/textRecordPlayer"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text= "Your record"
+            android:textSize="30sp"
+            android:textStyle="bold"
+            android:maxLines="1"
+            android:gravity="center_horizontal"
+            android:height="50dp"
+            android:layout_gravity="top"
+            android:layout_marginTop="10dp" />
+
+        <LinearLayout
+            android:layout_width="250dp"
+            android:layout_height= "wrap_content"
+            android:orientation="horizontal"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="15dp">
+            <TextView
+                android:id="@+id/name_player"
+                android:text="Jugador"
+                android:layout_height="wrap_content"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:textSize="25sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/time_player"
+                android:text="Tiempo"
+                android:layout_height="wrap_content"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:textSize="25sp"
+                android:textStyle="bold"
+                android:gravity="right" />
+
+        </LinearLayout>
+    </LinearLayout>
 
     <LinearLayout
         android:orientation="vertical"
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="wrap_content"
+        android:layout_weight="0">
 
         <TextView
             android:id="@+id/textTitle"
@@ -27,11 +73,11 @@
 
         <LinearLayout
             android:layout_width="250dp"
-            android:layout_height="300dp"
-            android:layout_gravity="center"
-            android:layout_marginTop="60dp"
-            android:layout_marginBottom="20dp"
-            android:orientation="vertical">
+            android:layout_height="230dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginBottom="10dp"
+            android:orientation="vertical"
+            android:layout_gravity="center_horizontal">
 
             <LinearLayout
                 android:layout_width="250dp"
@@ -40,7 +86,7 @@
                 android:layout_gravity="top">
             <TextView
                 android:id="@+id/nombre_Col"
-                android:text="Jugador"
+                android:text="Player"
                 android:layout_height="wrap_content"
                 android:layout_width="0dp"
                 android:layout_weight="1"
@@ -49,14 +95,13 @@
 
             <TextView
                 android:id="@+id/tiempo_Col"
-                android:text="Tiempo"
+                android:text="Time"
                 android:layout_height="wrap_content"
                 android:layout_width="0dp"
                 android:layout_weight="1"
-                android:layout_margin="5dp"
                 android:textSize="25sp"
                 android:textStyle="bold"
-                android:gravity="right" />
+                android:gravity="center_horizontal" />
 
             </LinearLayout>
 
@@ -69,7 +114,7 @@
 
         <LinearLayout
             android:layout_width="wrap_content"
-            android:layout_height="match_parent"
+            android:layout_height="wrap_content"
             android:orientation="vertical"
             android:layout_gravity="center_horizontal"
             android:gravity="center">
@@ -77,7 +122,7 @@
         <Button
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Jugar de nuevo"
+            android:text="Play again"
             android:id="@+id/btryagain"
             android:onClick="onButtonClick"
             android:width="200dp"

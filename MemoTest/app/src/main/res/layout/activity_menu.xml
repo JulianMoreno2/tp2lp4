@@ -17,7 +17,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:inputType="textPersonName"
-            android:text="Jugador"
+            android:text="Player"
             android:ems="10"
             android:id="@+id/editTextName"
             android:layout_marginTop="100dp"
@@ -43,7 +43,7 @@
                 <Button
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Principiante"
+                    android:text="Easy"
                     android:id="@+id/b_beginner"
                     android:onClick="onButtonClick"
                     android:background="@drawable/buttonstart"
@@ -70,7 +70,7 @@
                 <Button
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Experto"
+                    android:text="Hard"
                     android:id="@+id/b_expert"
                     android:onClick="onButtonClick"
                     android:background="@drawable/buttonstart"

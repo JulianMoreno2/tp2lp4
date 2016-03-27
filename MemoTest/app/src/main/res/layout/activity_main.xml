@@ -28,7 +28,7 @@
             android:maxLines="1"
             android:textSize="15sp"
             android:textStyle="bold"
-            android:text="Tiempo:"
+            android:text="Time:"
             android:layout_margin="5dp" />
 
         <TextView android:id="@+id/cronometro"
