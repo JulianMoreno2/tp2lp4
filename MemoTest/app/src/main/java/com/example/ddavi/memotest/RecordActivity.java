@@ -42,7 +42,7 @@ public class RecordActivity extends Activity {
         playerName.setText(MemoTest.getInstance().getPlayer().getNombre());
         playerRecord.setText(MemoTest.getInstance().getPlayer().getPuntuacion());
 
-        cursor = manager.loadCursorRecords();
+        cursor = manager.loadCursorRecordsLimit();
 
         //el cero es una bandera por defecto para que el simpleCursorAdapter no este deprecated
        adapter = new SimpleCursorAdapter(this,R.layout.column_row,cursor,from,to,0);
