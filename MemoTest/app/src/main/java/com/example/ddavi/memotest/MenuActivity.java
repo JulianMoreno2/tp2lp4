@@ -41,6 +41,7 @@ public class MenuActivity extends Activity {
     public void onButtonClick(View view) {
 
         MemoTest juego = MemoTest.getInstance();
+        finish();
 
         if(view.getId() == R.id.b_beginner){
             juego.setImages(MemoTest.getInstance().getBeginnerLevelImages());
@@ -58,11 +59,6 @@ public class MenuActivity extends Activity {
             juego.setImages(MemoTest.getInstance().getRandomImagesExpertLevel());
             juego.getPlayer().setNivel(NivelUsuario.Experto);
             AdaptadorDeMemoTest.timer = timerExpert;
-        }
-
-        if(view.getId() == R.id.bExit){
-            finish();
-            System.exit(0);
         }
 
         juego.getPlayer().setNombre(((EditText) findViewById(R.id.editTextName)).getText().toString());

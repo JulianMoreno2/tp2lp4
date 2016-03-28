@@ -67,18 +67,17 @@ public class RecordActivity extends Activity {
     }
 
     public void onButtonClick(View view) {
+
+        finish();
+
         if(view.getId() == R.id.bMenu){
-            finish();
             Intent intent = new Intent(RecordActivity.this, MenuActivity.class);
             startActivity(intent);
         }
 
         if(view.getId() == R.id.btryagain){
             MemoTest juego = MemoTest.getInstance();
-
             juego.setImages(MemoTest.getInstance().getBeginnerLevelImages());
-
-            finish();
             Intent intent = new Intent(RecordActivity.this, MainActivity.class);
             startActivity(intent);
         }

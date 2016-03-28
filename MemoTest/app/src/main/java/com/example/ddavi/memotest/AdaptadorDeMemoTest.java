@@ -76,6 +76,8 @@ public class AdaptadorDeMemoTest extends BaseAdapter {
 
         MemoTest.getInstance().getPlayer().setPuntuacion(record);
 
+        ((MainActivity)context).finish();
+
         manager = new DataBaseManager(context);
         //Agrega el player y su tiempo a la base de datos
         manager.insert(

@@ -39,8 +39,10 @@ public class HistoryActivity extends Activity{
     }
 
     public void onButtonClick(View view) {
+
+        finish();
+
         if (view.getId() == R.id.bMenu) {
-            finish();
             Intent intent = new Intent(HistoryActivity.this, MenuActivity.class);
             startActivity(intent);
         }

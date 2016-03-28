@@ -9,7 +9,7 @@
         android:layout_height="wrap_content"
         android:layout_width="100dp"
         android:layout_margin="5dp"
-        android:textSize="20sp"
+        android:textSize="15sp"
         android:textStyle="bold"
         android:layout_gravity="left" />
 
@@ -19,7 +19,7 @@
         android:layout_width="100dp"
         android:layout_margin="5dp"
         android:layout_marginLeft="@dimen/activity_horizontal_margin"
-        android:textSize="20sp"
+        android:textSize="15sp"
         android:gravity="right" />
 
   </LinearLayout>
